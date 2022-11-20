@@ -45,7 +45,6 @@ const [myData, setMyData] = useState(data)
     
   }, [data]);
 
-  console.log(data);
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">

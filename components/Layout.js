@@ -9,7 +9,7 @@ import Footer from './footer/Footer';
 import Navbar from './Navbar';
 
 
-const Main = ({ title, children }) => (
+const Layout = ({ title, children }) => (
     <>
         <Head>
             {/* <title>{blogConfig.blogName + ' | ' + (title || blogConfig.defaultTitle)}</title> */}
@@ -28,4 +28,4 @@ const Main = ({ title, children }) => (
     </>
 );
 
-export default Main;
+export default Layout;
