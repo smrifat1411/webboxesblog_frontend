@@ -10,16 +10,20 @@
   },
   "dependencies": {
     "@apollo/client": "^3.7.1",
+    "@tailwindcss/line-clamp": "^0.4.2",
+    "classnames": "^2.3.2",
     "framer-motion": "^7.6.5",
     "graphql": "^16.6.0",
     "moment": "^2.29.4",
     "next": "13.0.1",
     "nprogress": "^0.2.0",
     "react": "18.2.0",
+    "react-burger-menu": "^3.0.8",
     "react-content-loader": "^6.2.0",
     "react-dom": "18.2.0",
     "react-loading-skeleton": "^3.1.0",
     "react-markdown": "^8.0.3",
+    "react-multi-carousel": "^2.8.2",
     "sass": "^1.56.1"
   },
   "devDependencies": {

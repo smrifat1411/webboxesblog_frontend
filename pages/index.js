@@ -3,18 +3,24 @@
 
 import PostCard from "../components/PostCard";
 import client from "../lib/apolloClient";
-import { getAllPosts, getRecentPosts } from "../services/query";
+import { getAllPosts, getFeaturedPosts, getRecentPosts } from "../services/query";
 import PostWidget from '../components/PostWidget'
 import Categories from "../components/Categories";
+import FeaturedPosts from "../components/FeaturedPosts";
+import Navbar from "../components/Navbar";
 
 // import { getPosts } from '../services';
 
 
-export default function Home({ posts,recentposts,categories }) {
+export default function Home({ posts,recentposts,categories,FeaturedPostsData }) {
+
+
 
   return (
-    <div className="container mx-auto mb-8">
-      {/* <FeaturedPosts /> */}
+    <div className="container mx-auto px-10 mb-8">
+
+      <FeaturedPosts data={FeaturedPostsData} />
+      
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
         <div className="lg:col-span-8 col-span-1">
           {posts.map((post, index) =>
@@ -39,7 +45,7 @@ export default function Home({ posts,recentposts,categories }) {
 
 
 export async function getStaticProps() {
-
+  
 const {data} = await client.query({
   query: getAllPosts,
   variables:{
@@ -48,13 +54,16 @@ const {data} = await client.query({
     start:0
   }
 })
-
+const FeaturedPosts = await client.query({
+  query: getFeaturedPosts
+})
 
 return{
   props:{
     posts:data.allposts.data,
     recentposts:data.recentposts.data,
-    categories: data.allcategories.data
+    categories: data.allcategories.data,
+    FeaturedPostsData:FeaturedPosts.data.posts.data
   }
 }
 

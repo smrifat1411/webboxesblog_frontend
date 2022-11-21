@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-
 function NavLink({ to, children }) {
   return (
     <a href={to} className={`mx-4`}>
@@ -11,8 +10,8 @@ function NavLink({ to, children }) {
 function MobileNav({ open, setOpen }) {
   return (
     <div
-      className={` top-0 left-0 h-screen w-screen bg-white transform fixed  ${
-        open ? "-translate-x-0 " : "-translate-x-full"
+      className={`top-0 left-0  h-screen  w-screen bg-slate-800 transform  fixed ${
+        open ? "-translate-x-0  " : "-translate-x-full"
       } transition-transform duration-300 ease-in-out filter drop-shadow-md `}
     >
       <div className="flex items-center justify-center filter drop-shadow-md bg-white h-20">
@@ -28,7 +27,7 @@ function MobileNav({ open, setOpen }) {
                 </a> */}
         <a href="/gallery"> gallery</a>
         <a href="/blog">blog</a>
-        
+
         {/* <a className="text-xl font-normal my-4" href="/blog" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
                     Blog
                 </a> */}
@@ -40,8 +39,12 @@ function MobileNav({ open, setOpen }) {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <nav className="flex filter drop-shadow-md bg-white px-4 py-4 h-20 items-center">
-      <MobileNav open={open} setOpen={setOpen} />
+    <nav className="flex filter drop-shadow-md bg-gray  px-4 py-4 h-20 items-center">
+      <div>
+    
+        <MobileNav open={open} setOpen={setOpen} />
+      </div>
+
       <div className="w-3/12 flex items-center">
         <a className="text-2xl font-semibold" href="/">
           LOGO

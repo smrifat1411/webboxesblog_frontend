@@ -110,7 +110,7 @@ const PostCard = ({ post }) => {
       </div>
       {/* <p className="text-center  text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8 line-clamp-3 hover:line-clamp-6"> */}
       {dataLoading ? <Skeleton count={3}></Skeleton> : undefined}
-      <div style={{ display: dataLoading ? "none" : undefined }}>
+      <div style={{ display: dataLoading ? "none" : undefined }} className=" line-clamp-3">
         <ReactMarkdown
           
           children={post.attributes.content}

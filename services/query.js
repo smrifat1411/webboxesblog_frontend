@@ -287,4 +287,59 @@ query getAllCategories{
 }`
 
 
-export { getAllPosts,getPostBySlug,getRecentPosts,getSimilarPosts,getAllCategories };
+const getFeaturedPosts= gql`
+
+query featuredPost{
+  posts(filters:{featurePost:{eq:true}}){
+ data {
+      id
+      attributes {
+        createdAt
+        updatedAt
+        author{
+          data{
+            attributes{
+              fullname
+              profilephoto{
+                data{
+                  attributes{
+                    url
+                    previewUrl
+                    formats
+                  }
+                }
+              }
+            }
+          }
+        }
+        slug
+        cover {
+          data {
+            id
+            attributes {
+              url
+              previewUrl
+              width
+              height
+              formats
+            }
+          }
+        }
+        category{
+          data{
+            id
+            attributes{
+              name
+              slug
+            }
+          }
+        }
+        title
+        content
+      }
+    }
+  }
+}`
+
+
+export { getAllPosts,getPostBySlug,getRecentPosts,getSimilarPosts,getAllCategories,getFeaturedPosts };
