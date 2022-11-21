@@ -5,9 +5,8 @@ import NavBar1 from "../components/NavBar1";
 
 import Footer from "./footer/Footer";
 import Navbar from "./Navbar";
-import NavBar3 from "./NavBar3/NavBar3";import Navbar4 from "./Navbar4";
-
-
+import NavBar3 from "./NavBar3/NavBar3";
+import Navbar4 from "./Navbar4";
 
 const Layout = ({ title, children }) => (
   <>
@@ -15,7 +14,7 @@ const Layout = ({ title, children }) => (
       {/* <title>{blogConfig.blogName + ' | ' + (title || blogConfig.defaultTitle)}</title> */}
     </Head>
 
-    <Navbar4/>
+    <Navbar4 />
 
     <main>{children}</main>
 
