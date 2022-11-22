@@ -93,3 +93,8 @@ nav{
    width: 100%;
   }
 }
+.myNav{
+  position: sticky;
+  z-index: 30;
+  top: 0;
+}

@@ -5,7 +5,6 @@ import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { useEffect } from "react";
 import "../stylesheets/globals.scss";
-import "../stylesheets/nprogress.css";
 import Layout from "../components/Layout";
 import { ApolloProvider } from "@apollo/client";
 import client from "../lib/apolloClient";
