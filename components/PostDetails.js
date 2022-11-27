@@ -106,8 +106,10 @@ const PostDetails = ({ post }) => {
 
             return getContentFragment(index, children, typeObj, typeObj.type);
           })} */}
-
-          <ReactMarkdown children={post.attributes.content} />
+  <div className=" overflow-hidden">
+     <ReactMarkdown children={post.attributes.content} />
+  </div>
+         
         </div>
       </div>
     </>

@@ -48,7 +48,7 @@ const PostCard = ({ post }) => {
 
       {
         <h1 className="transition duration-700 text-center mb-8 cursor-pointer hover:text-pink-600 text-3xl font-semibold">
-          <Link href={`/post/${post.slug}`}>
+          <Link href={`/post/${post.attributes.slug}`}>
             {dataLoading ? (
               <Skeleton height="100%" width="75%" />
             ) : (
@@ -110,7 +110,7 @@ const PostCard = ({ post }) => {
       </div>
       {/* <p className="text-center  text-lg text-gray-700 font-normal px-4 lg:px-20 mb-8 line-clamp-3 hover:line-clamp-6"> */}
       {dataLoading ? <Skeleton count={3}></Skeleton> : undefined}
-      <div style={{ display: dataLoading ? "none" : undefined }} className=" line-clamp-3">
+      <div style={{ display: dataLoading ? "none" : undefined }} className=" line-clamp-3 overflow-hidden">
         <ReactMarkdown
           
           children={post.attributes.content}
@@ -119,10 +119,10 @@ const PostCard = ({ post }) => {
 
       {/* </p> */}
       
-      <div className="text-center rounded-full">
+      <div className="text-center rounded-full ">
       {dataLoading?<Skeleton width={70} height="100%" ></Skeleton>:undefined}
         <Link href={`/post/${post.attributes.slug}`}>
-                 <div style={{ display: dataLoading ? "none" : undefined }} className="transition duration-500 ease transform hover:-translate-y-1 inline-block bg-blue-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
+                 <div style={{ display: dataLoading ? "none" : undefined }} className="transition duration-500 ease mt-5 transform hover:-translate-y-1 inline-block bg-blue-600 text-lg font-medium rounded-full text-white px-8 py-3 cursor-pointer">
                
             Continue Reading
      

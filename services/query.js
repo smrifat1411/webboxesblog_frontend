@@ -290,7 +290,7 @@ query getAllCategories{
 const getFeaturedPosts= gql`
 
 query featuredPost{
-  posts(filters:{featurePost:{eq:true}}){
+  posts(filters:{featuredpost:{eq:true}}){
  data {
       id
       attributes {

@@ -13,8 +13,8 @@ const Layout = ({ title, children }) => (
     <Head>
       {/* <title>{blogConfig.blogName + ' | ' + (title || blogConfig.defaultTitle)}</title> */}
     </Head>
-    <Navbar></Navbar>
-    {/* <Navbar4 /> */}
+    {/* <Navbar></Navbar> */}
+    <Navbar4 />
 
     <main>{children}</main>
 

@@ -17,7 +17,7 @@ export default function Home({ posts,recentposts,categories,FeaturedPostsData })
 
 
   return (
-    <div className="container mx-auto mt-8 px-10 mb-8">
+    <div className="container mx-auto mt-8 px-4 mb-8">
 
       <FeaturedPosts data={FeaturedPostsData} />
       

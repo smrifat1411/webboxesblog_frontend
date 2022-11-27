@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+
 function NavLink({ to, children }) {
   return (
     <a href={to} className={`mx-4`}>
@@ -10,27 +11,28 @@ function NavLink({ to, children }) {
 function MobileNav({ open, setOpen }) {
   return (
     <div
-      className={`top-0 left-0  h-screen  w-screen bg-slate-800 transform  fixed ${
+      className={`top-0 right-0 left-0 h-screen  w-[80%] bg-slate-100  transform  fixed ${
         open ? "-translate-x-0  " : "-translate-x-full"
       } transition-transform duration-300 ease-in-out filter drop-shadow-md `}
     >
       <div className="flex items-center justify-center filter drop-shadow-md bg-white h-20">
-        {" "}
         {/*logo container*/}
         <a className="text-xl font-semibold" href="/">
           LOGO
         </a>
       </div>
-      <div className="flex bg-white flex-col ml-4">
-        {/* <a className="text-xl font-medium my-4" href="/gallery" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
-                    Gallery
-                </a> */}
-        <a href="/gallery"> gallery</a>
-        <a href="/blog">blog</a>
-
-        {/* <a className="text-xl font-normal my-4" href="/blog" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
+      {/* <a className="text-xl font-normal my-4" href="/blog" onClick={() => setTimeout(() => {setOpen(!open)}, 100)}>
                     Blog
                 </a> */}
+      <div className="flex  flex-col ml-4 ">
+        <a className="text-xl font-medium my-4" href="/">
+
+          Blog
+        </a>
+        <a className="text-xl font-medium my-4" href="/">
+          About Us
+        </a>
+    
       </div>
     </div>
   );
@@ -39,10 +41,9 @@ function MobileNav({ open, setOpen }) {
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   return (
-    <nav className=" myNav flex filter drop-shadow-md bg-gray  px-4 py-4 h-20 items-center" >
+    <nav className=" myNav flex filter drop-shadow-md bg-gray  px-4 py-4 h-16 items-center">
       <div>
-    
-        <MobileNav open={open} setOpen={setOpen} />
+        <MobileNav open={open} />
       </div>
 
       <div className="w-3/12 flex items-center">
@@ -76,8 +77,8 @@ export default function Navbar() {
         </div>
 
         <div className="hidden md:flex">
-          <NavLink to="/gallery">Gallery</NavLink>
-          <NavLink to="/post">Blog</NavLink>
+          <NavLink to="/">Blog</NavLink>
+          <NavLink to="#">About Us</NavLink>
         </div>
       </div>
     </nav>

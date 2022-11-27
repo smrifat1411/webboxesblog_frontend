@@ -1,7 +1,7 @@
 import React from "react"
 import values from "../utils/values"
 
-export default function Modal({ children }) {
+export default function MenuModal({ children }) {
   return (
     <div
       style={{
