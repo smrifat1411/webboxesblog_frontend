@@ -5,7 +5,7 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import Skeleton from "react-loading-skeleton";
 
-const PostCard = ({ post }) => {
+const  PostCard = ({ post }) => {
   const [dataLoading, setDataLoading] = useState(true);
 
   const myStyle = {
